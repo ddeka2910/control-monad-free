@@ -13,7 +13,10 @@ sudo: false
 
 # Do not choose a language; we provide our own build tools.
 language: generic
-
+# amd64 and ppc64le arch
+arch:
+ - amd64
+ - ppc64le
 # Caching so the next build will be fast too.
 cache:
   directories:
