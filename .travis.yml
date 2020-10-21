@@ -40,6 +40,27 @@ matrix:
   - env: BUILD=stack ARGS="--resolver nightly"
     compiler: ": #stack nightly"
     addons: {apt: {packages: [libgmp-dev]}}
+  #powerjobs
+  - env: ARGS="--resolver=lts-9"
+    compiler: ": #stack 8.0.2"
+    arch: ppc64le
+    addons: {apt: {packages: [libgmp-dev]}}
+
+  - env: BUILD=stack ARGS="--resolver lts-11"
+    compiler: ": #stack 8.2.2"
+    arch: ppc64le
+    addons: {apt: {packages: [libgmp-dev]}}
+
+  - env: BUILD=stack ARGS="--resolver lts-12"
+    compiler: ": #stack 8.4.3"
+    arch: ppc64le
+    addons: {apt: {packages: [libgmp-dev]}}
+
+  # Nightly builds are allowed to fail
+  - env: BUILD=stack ARGS="--resolver nightly"
+    compiler: ": #stack nightly"
+    arch: ppc64le
+    addons: {apt: {packages: [libgmp-dev]}}  
 
   allow_failures:
   - env: BUILD=stack ARGS="--resolver nightly"
